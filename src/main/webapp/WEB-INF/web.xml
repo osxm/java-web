@@ -11,8 +11,26 @@
 		<servlet-name>H2Console</servlet-name>
 		<servlet-class>org.h2.server.web.WebServlet</servlet-class>
 	</servlet>
+	<servlet>
+		<servlet-name>demoServlet</servlet-name>
+		<servlet-class>com.osxm.jw.servlet.DemoServlet</servlet-class>
+	</servlet>
+	<servlet>
+		<servlet-name>loginServlet</servlet-name>
+		<servlet-class>com.osxm.jw.servlet.LoginServlet</servlet-class>
+	</servlet>
+
+
+	<servlet-mapping>
+		<servlet-name>demoServlet</servlet-name>
+		<url-pattern>/demoServlet</url-pattern>
+	</servlet-mapping>
 	<servlet-mapping>
 		<servlet-name>H2Console</servlet-name>
 		<url-pattern>/console/*</url-pattern>
 	</servlet-mapping>
+	<servlet-mapping>
+		<servlet-name>loginServlet</servlet-name>
+		<url-pattern>/csrf/login</url-pattern>
+	</servlet-mapping>	
 </web-app>
