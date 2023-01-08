@@ -38,7 +38,15 @@ public class CsrfServlet extends HttpServlet{
 			throws ServletException, IOException {	
 		String csrfTokenSession =  req.getSession().getAttribute("csrfToken")!=null?req.getSession().getAttribute("csrfToken").toString():"";
 		String csrfTokenParam = req.getParameter("csrfToken");
-		
-		
+		String amount = req.getParameter("amount");
+		String msg = "";
+		if(csrfTokenSession.equals(csrfTokenParam)) {
+			// 进行转账
+			msg = "successful.";
+		}else {
+			msg = "invalid csrf token, maybe CSRF Attach。";
+		}
+		req.setAttribute("msg",msg);
+		req.getRequestDispatcher("result.jsp").forward(req,resp);
 	}
 }

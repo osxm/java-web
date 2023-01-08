@@ -16,7 +16,7 @@
   
   csrfToken = <%=csrfToken %> <br>
   
-  <form action="">
+  <form action="demo" method="POST">
       转账金额：<input type="text" name="amount"> <br>
       <input type="hidden" name="csrfToken" value="<%=csrfToken%>">
       <input type="submit" value="转账">

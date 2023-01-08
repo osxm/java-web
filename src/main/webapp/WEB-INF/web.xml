@@ -19,7 +19,10 @@
 		<servlet-name>loginServlet</servlet-name>
 		<servlet-class>com.osxm.jw.servlet.LoginServlet</servlet-class>
 	</servlet>
-
+	<servlet>
+		<servlet-name>csrfServlet</servlet-name>
+		<servlet-class>com.osxm.jw.servlet.CsrfServlet</servlet-class>
+	</servlet>
 
 	<servlet-mapping>
 		<servlet-name>demoServlet</servlet-name>
@@ -32,5 +35,9 @@
 	<servlet-mapping>
 		<servlet-name>loginServlet</servlet-name>
 		<url-pattern>/csrf/login</url-pattern>
+	</servlet-mapping>	
+	<servlet-mapping>
+		<servlet-name>csrfServlet</servlet-name>
+		<url-pattern>/csrf/demo</url-pattern>
 	</servlet-mapping>	
 </web-app>
